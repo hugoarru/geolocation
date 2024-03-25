@@ -1,1 +1,1 @@
-# geolocalization
+# geolocation
