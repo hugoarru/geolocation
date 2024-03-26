@@ -62,7 +62,7 @@ function traceBack(
   maze: string[][],
   end: Point,
   distance: number,
-  start,
+  start: Point,
 ): void {
   let currentPos = { x: end.x, y: end.y };
   while (distance > 0) {
