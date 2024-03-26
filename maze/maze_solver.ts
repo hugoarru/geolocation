@@ -31,7 +31,8 @@ function solveMaze(inputFilename: string, outputFilename: string): void {
         currentPosition.x++
       ) {
         if (
-          maze[currentPosition.y][currentPosition.x] === distance.toString()
+          maze[currentPosition.y][currentPosition.x] ===
+          (distance - 1).toString()
         ) {
           if (
             currentPosition.y === end.y &&
@@ -55,6 +56,7 @@ function solveMaze(inputFilename: string, outputFilename: string): void {
   });
   const outputMaze = maze.map((line) => line.join("")).join("\n");
   console.log(outputMaze);
+  fs.writeFileSync(outputFilename, outputMaze, { encoding: "utf8" });
 }
 
 function traceBack(
