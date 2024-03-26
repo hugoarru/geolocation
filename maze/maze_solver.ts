@@ -31,8 +31,7 @@ function solveMaze(inputFilename: string, outputFilename: string): void {
         currentPosition.x++
       ) {
         if (
-          maze[currentPosition.y][currentPosition.x] ===
-          (distance - 1).toString()
+          maze[currentPosition.y][currentPosition.x] === distance.toString()
         ) {
           if (
             currentPosition.y === end.y &&
