@@ -10,16 +10,16 @@
 
   onMount(async () => {
     const response = await fetch('bnlc.csv');
-    const reader = response.body.getReader();
+    const reader = response.body?.getReader();
     const decoder = new TextDecoder('utf-8');
     let csv = '';
-    while (true) {
+    while (reader) {
       const result = await reader.read();
       if (result.done) break;
       csv += decoder.decode(result.value);
     }
     const parsed = Papa.parse(csv, { header: true });
-    data = parsed.data;
+    data = parsed.data as Row[];
   });
 </script>
 
