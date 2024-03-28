@@ -1,7 +1,7 @@
 <script lang="ts">
   import { onMount } from 'svelte';
   import Papa from 'papaparse';
-
+import Carte from './carte.svelte';
   interface Row {
     [key: string]: string;
   }
@@ -19,6 +19,7 @@
   });
 </script>
 
+<Carte></Carte>
 <table>
   <thead>
     <tr>
